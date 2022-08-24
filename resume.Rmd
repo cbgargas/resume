@@ -168,13 +168,13 @@ University Heights, OH, USA
 Trainings and Workshops Attended {data-icon=folder-open}
 --------------------------------------------------------------------------------
 
-### Graphic Design with ggplot2
+### Graphic Design with ggplot2 - Cédric Scherer
 
 How to Create Engaging and Complex Visualizations in R.
 
-rstudio::conf(2022) Workshop by Cédric Scherer
-
-July 2022
+rstudio::conf(2022)
+  
+July 2022  
 
 Selected Publications and Posters {data-icon=file}
 --------------------------------------------------------------------------------
