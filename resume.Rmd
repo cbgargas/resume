@@ -1,0 +1,202 @@
+---
+title: "Cory Gargas' resume"
+author: Cory Gargas
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css: 
+      - css/custom_resume.css
+      - css/styles.css
+      - resume
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+# uncomment this line to produce HTML and PDF in RStudio:
+#knit: pagedown::chrome_print
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+pacman::p_load(glue, tidyverse)
+
+# ======================================================================
+# These variables determine how the the data is loaded and how the exports are
+# done.
+
+# Is data stored in google sheets? If no data will be gather from the csvs/
+# folder in project
+using_googlesheets <- FALSE
+
+# Just the copied URL from the sheet
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc"
+
+# Is this sheet available for anyone to read? If you're using a private sheet
+# set this to false and go to gather_data.R and run the data loading manually
+# once to cache authentication
+sheet_is_publicly_readable <- TRUE
+
+# Is the goal of this knit to build a document that is exported to PDF? If so
+# set this to true to have links turned into footnotes at the end of the
+# document
+PDF_EXPORT <- FALSE
+
+
+# A global (gasp) variable that holds all the links that were inserted for
+# placement at the end
+links <- c()
+
+# ======================================================================
+# Now we source two external scripts. One contains functions for building the
+# text output and the other loads up our data from either googlesheets or csvs
+
+# Functions for building sections from CSV data
+source('parsing_functions.R') 
+
+# Load data for CV/Resume
+source('gather_data.R')
+
+# Now we just need to filter down the position data to include less verbose
+# categories and only the entries we have designated for the resume
+position_data <- position_data %>% 
+  filter(in_resume) %>% 
+  mutate(
+    # Build some custom sections by collapsing others
+    section = case_when(
+      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
+      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      TRUE ~ section
+    )
+  ) 
+```
+
+Aside
+================================================================================
+
+![Cory Gargas](headshot.jpeg){width=100%}
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+contact_info %>% 
+  glue_data("- <i class='fa fa-{icon}'></i> {contact}")
+```
+- For more information, please contact me via email.
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+build_skill_bars(skills)
+```
+
+Experienced in data wrangling, exploratory analysis, statistical analysis, and Data visualization.
+
+Experienced with short- and long-read next-generation sequencing data analysis.
+
+Very experienced with phylogenetics and microbiome analysis.
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Resume created using the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+Last update: `r Sys.Date()`.
+
+Main
+================================================================================
+
+Cory Gargas{#title}
+--------------------------------------------------------------------------------
+
+### Currently searching for a data analyst or bioinformaticist position.
+
+```{r}
+print_text_block(text_blocks, 'intro')
+```
+
+Education {data-icon=graduation-cap}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('education')
+```
+
+Research Experience {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('research')
+```
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('industry')
+```
+
+Mentoring and Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### Biology Graduate Student Association (BGSA) peer mentorship program  
+
+Mentored incoming graduate students to the UA Biology graduate program.  
+
+Fayetteville, OH, USA  
+
+2023 - 2022  
+
+### Human Anatomy.
+
+Delivered over $`r plyr::round_any((1658.04*552), 100000, f = floor)/1000`k in instructional services and graded assignments for 500+ students. 
+
+Fayetteville, OH, USA
+
+2023 - 2018
+
+### Principles of Biology I, II, III labs.
+
+Delivered over $`r plyr::round_any(((797*4)*(24*4)), 100000, f = floor)/1000`k in instructional services and graded assignments for `r plyr::round_any((24*4), 10, f = floor)`+ students. 
+
+University Heights, OH, USA
+
+2018 - 2016
+
+Workshops {data-icon=folder-open}
+--------------------------------------------------------------------------------
+
+Selected Publications and Posters {data-icon=file}
+--------------------------------------------------------------------------------
+
+### Description of *Stenomitos kolaenensis* and *S. hiloensis sp. nov.* (Leptolyngbyaceae, Cyanobacteria) with an emendation of the genus. 
+
+Phytotaxa. 440(2):108–128.
+
+N/A
+
+2020
+
+Shalygin S, Shalygina RR, Redkina VV, **Gargas CB**, Johansen JR. 
+
+### Genome Sequences of Bacteria Associated with the Diatom *Cyclotella cryptica* Strain CCMP332. 
+
+Microbiology Resource Announcements. 12;9(46):e01030-20.
+
+N/A
+
+2020
+
+**Gargas CB**, Roberts WR, Alverson AJ.
+
+### Phylogenetic Analysis Reveals that the‘Radial Centric’ Datom *Orthoseira* Thwaites (Orthoseiraceae, Bacillariophyta) is a Member of a ‘Multipolar’ Diatom Lineage.fi
+
+Protist. 169(6):803–825.
+
+N/A
+
+2018
+
+**Gargas CB**, Theriot EC, Ashworth MP, Johansen JR.
