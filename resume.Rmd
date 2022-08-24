@@ -165,8 +165,16 @@ University Heights, OH, USA
 
 2018 - 2016
 
-Workshops {data-icon=folder-open}
+Trainings and Workshops Attended {data-icon=folder-open}
 --------------------------------------------------------------------------------
+
+### Graphic Design with ggplot2
+
+How to Create Engaging and Complex Visualizations in R.
+
+rstudio::conf(2022) Workshop by Cédric Scherer
+
+July 2022
 
 Selected Publications and Posters {data-icon=file}
 --------------------------------------------------------------------------------
