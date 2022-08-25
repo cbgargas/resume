@@ -83,7 +83,6 @@ Contact Info {#contact}
 contact_info %>% 
   glue_data("- <i class='fa fa-{icon}'></i> {contact}")
 ```
-- For more information, please contact me via email.
 
 Skills {#skills}
 --------------------------------------------------------------------------------
@@ -115,6 +114,13 @@ Cory Gargas{#title}
 
 ```{r}
 print_text_block(text_blocks, 'intro')
+```  
+  
+Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+```{r}
+position_data %>% print_section('research')
 ```
 
 Education {data-icon=graduation-cap}
@@ -122,20 +128,6 @@ Education {data-icon=graduation-cap}
 
 ```{r}
 position_data %>% print_section('education')
-```
-
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-position_data %>% print_section('research')
-```
-
-Professional Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-```{r}
-position_data %>% print_section('industry')
 ```
 
 Mentoring and Teaching Experience {data-icon=chalkboard-teacher}
