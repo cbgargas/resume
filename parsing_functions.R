@@ -93,6 +93,55 @@ print_section <- function(position_data, section_id){
     )
 }
 
+# Take a position dataframe and the section id desired
+# and prints the section to markdown. 
+print_ed <- function(position_data, section_id){
+	position_data %>% 
+		filter(section == section_id) %>% 
+		arrange(desc(end)) %>% 
+		mutate(id = 1:n()) %>% 
+		pivot_longer(
+			starts_with('description'),
+			names_to = 'description_num',
+			values_to = 'description'
+		) %>% 
+		filter(!is.na(description) | description_num == 'description_1') %>%
+		group_by(id) %>% 
+		mutate(
+			descriptions = list(description),
+			no_descriptions = is.na(first(description))
+		) %>% 
+		ungroup() %>% 
+		filter(description_num == 'description_1') %>% 
+		mutate(
+			timeline = ifelse(
+				is.na(start) | start == end,
+				end,
+				glue('{end} - {start}')
+			),
+			description_bullets = ifelse(
+				no_descriptions,
+				' ',
+				map_chr(descriptions, ~paste('-', ., collapse = '\n'))
+			)
+		) %>% 
+		strip_links_from_cols(c('title')) %>% 
+		# strip_links_from_cols(c('title', 'description_bullets')) %>% # un-comment this to strip markdown syntax from description bullets
+		mutate_all(~ifelse(is.na(.), 'N/A', .)) %>% 
+		glue_data(
+			"### {title}",
+			"\n\n",
+			"{institution}",
+			"\n\n",
+			"{loc}",
+			"\n\n",
+			"{end}", 
+			"\n\n",
+			"{description_bullets}",
+			"\n\n\n",
+		)
+}
+
 # Construct a bar chart of skills
 build_skill_bars <- function(skills, out_of = 5){
   bar_color <- "#000000"
