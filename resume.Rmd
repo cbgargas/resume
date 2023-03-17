@@ -166,4 +166,4 @@ How to Create Engaging and Complex Visualizations in R.
 
 rstudio::conf(2022)
   
-July 2022  
+July 2022 
