@@ -127,7 +127,7 @@ Education {data-icon=graduation-cap}
 --------------------------------------------------------------------------------
 
 ```{r}
-position_data %>% print_section('education')
+position_data %>% print_ed('education')
 ```
 
 Mentoring and Teaching Experience {data-icon=chalkboard-teacher}
@@ -167,36 +167,3 @@ How to Create Engaging and Complex Visualizations in R.
 rstudio::conf(2022)
   
 July 2022  
-
-Selected Publications and Posters {data-icon=file}
---------------------------------------------------------------------------------
-
-### Description of *Stenomitos kolaenensis* and *S. hiloensis sp. nov.* (Leptolyngbyaceae, Cyanobacteria) with an emendation of the genus. 
-
-Phytotaxa. 440(2):108–128.
-
-N/A
-
-2020
-
-Shalygin S, Shalygina RR, Redkina VV, **Gargas CB**, Johansen JR. 
-
-### Genome Sequences of Bacteria Associated with the Diatom *Cyclotella cryptica* Strain CCMP332. 
-
-Microbiology Resource Announcements. 12;9(46):e01030-20.
-
-N/A
-
-2020
-
-**Gargas CB**, Roberts WR, Alverson AJ.
-
-### Phylogenetic Analysis Reveals that the‘Radial Centric’ Datom *Orthoseira* Thwaites (Orthoseiraceae, Bacillariophyta) is a Member of a ‘Multipolar’ Diatom Lineage.fi
-
-Protist. 169(6):803–825.
-
-N/A
-
-2018
-
-**Gargas CB**, Theriot EC, Ashworth MP, Johansen JR.
