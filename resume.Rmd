@@ -93,7 +93,7 @@ build_skill_bars(skills)
 
 Experienced in data wrangling, exploratory analysis, statistical analysis, and Data visualization.
 
-Experienced with short- and long-read next-generation sequencing data analysis.
+Experienced with short- and long-read NGS data analysis.
 
 Very experienced with phylogenetics and microbiome analysis.
 
