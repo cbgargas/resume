@@ -137,7 +137,7 @@ Mentoring and Teaching Experience {data-icon=chalkboard-teacher}
 
 Mentored incoming graduate students to the UA Biology graduate program.  
 
-Fayetteville, OH, USA  
+Fayetteville, AR, USA  
 
 2023 - 2022  
 
@@ -145,9 +145,9 @@ Fayetteville, OH, USA
 
 Delivered over $`r plyr::round_any((1658.04*552), 100000, f = floor)/1000`k in instructional services and graded assignments for 500+ students. 
 
-Fayetteville, OH, USA
+Fayetteville, AR, USA
 
-2023 - 2018
+2018 - 2016
 
 ### Principles of Biology I, II, III labs.
 
