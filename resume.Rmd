@@ -107,7 +107,7 @@ Last update: `r Sys.Date()`.
 Main
 ================================================================================
 
-Cory Gargas{#title}
+Cory Gargas, Ph.D.{#title}
 --------------------------------------------------------------------------------
 
 ### Currently searching for a data analyst or bioinformaticist position.
