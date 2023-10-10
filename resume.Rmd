@@ -110,8 +110,6 @@ Main
 Cory Gargas, Ph.D.{#title}
 --------------------------------------------------------------------------------
 
-### Currently searching for a data analyst or bioinformaticist position.
-
 ```{r}
 print_text_block(text_blocks, 'intro')
 ```  
