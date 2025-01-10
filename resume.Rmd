@@ -91,16 +91,16 @@ Skills {#skills}
 build_skill_bars(skills)
 ```
 
-Experienced in data wrangling, exploratory analysis, statistical analysis, and Data visualization.
+Very experienced in data wrangling, data management, exploratory analysis, statistical analysis, and Data visualization.
 
 Experienced with short- and long-read NGS data analysis.
 
-Very experienced with phylogenetics and microbiome analysis.
+Experienced with phylogenetics and microbiome analysis.
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Resume created using the R package [**pagedown**](https://github.com/rstudio/pagedown).
+Resume created using the Quarto & the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 Last update: `r Sys.Date()`.
 
